@@ -1,0 +1,24 @@
+<h1>All Employees</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Position</th>
+    <th></th>
+  </tr>
+
+  <% @employees.each do |employee| %>
+    <tr>
+      <td><%= employee.name %></td>
+      <td><%= employee.email %></td>
+      <td><%= employee.phone %></td>
+      <td><%= employee.position %></td>
+      <td><%= link_to 'View', employee_path(employee) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+  <%= link_to 'Add New', new_employee_path %>
+</p>

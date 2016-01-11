@@ -1,0 +1,13 @@
+<%= form_for([@employee, @employee.devices.build]) do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :mac %>
+    <%= f.text_field :mac %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

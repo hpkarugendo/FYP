@@ -1,0 +1,6 @@
+<p>
+  <strong><%= device.name  %></strong>
+  <%= link_to 'Delete Device', [device.employee, device],
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %>
+</p>

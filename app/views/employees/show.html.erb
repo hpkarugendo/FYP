@@ -1,0 +1,35 @@
+<h1>Employee <%= @employee.code %></h1>
+<p>
+  <strong>Name:</strong>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @employee.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @employee.phone %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @employee.position %>
+</p>
+
+<h2>Devices:</h2>
+<% if @employee.devices.empty? then %>
+  <p>No Devices</p>
+<% else %>
+  <%= render @employee.devices %>
+<% end %>
+
+<h2>Add a Device:</h2>
+<%= render 'devices/form' %>
+
+<%= link_to 'Edit Employee', edit_employee_path(@employee) %> |
+<%= link_to 'List Of Employees', employees_path %> |
+<%= link_to 'Delete Employee', employees_path(@employee),
+    method: :delete, data: {confirm: "Are you sure?"} %>
